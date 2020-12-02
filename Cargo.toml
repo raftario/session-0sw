@@ -1,0 +1,23 @@
+[package]
+name = "session-0sw"
+version = "0.1.0"
+authors = ["Raphaël Thériault <raphael_theriault@outlook.com>"]
+edition = "2018"
+license = "Apache-2.0"
+
+[dependencies]
+anyhow = "1.0.34"
+chrono = "0.4.19"
+clap = "3.0.0-beta.2"
+nalgebra = "0.23.1"
+plotters = { version = "0.3.0", features = ["svg_backend", "line_series"], default-features = false }
+rand = { version = "0.7.3", features = ["small_rng"] }
+sdl2 = { version = "0.34.3", features = ["gfx", "ttf", "use-vcpkg", "static-link"] }
+
+[package.metadata.vcpkg]
+dependencies = ["sdl2", "sdl2-gfx", "sdl2-ttf"]
+git = "https://github.com/microsoft/vcpkg"
+branch = "master"
+
+[package.metadata.vcpkg.target]
+x86_64-pc-windows-msvc = { triplet = "x64-windows-static-md" }
