@@ -36,6 +36,17 @@ jobs:
                       target
                   key: ${{ runner.os }}-build-${{ hashFiles('**/Cargo.lock') }}
 
+            - name: Install cargo-vcpkg
+              uses: actions-rs/cargo@v1
+              with:
+                  command: install
+                  args: cargo-vcpkg
+            - name: Build vcpkg dependencies
+              uses: actions-rs/cargo@v1
+              with:
+                  command: vcpkg
+                  args: build
+
             - name: Build binary
               uses: actions-rs/cargo@v1
               with:
