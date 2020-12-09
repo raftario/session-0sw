@@ -10,7 +10,7 @@ jobs:
                 os: [ubuntu-latest, windows-latest, macOS-latest]
                 include:
                     - os: ubuntu-latest
-                      target: x86_64-unknown-linux-musl
+                      target: x86_64-unknown-linux-gnu
                       bin: target/release/session-0sw
                     - os: windows-latest
                       target: x86_64-pc-windows-msvc
